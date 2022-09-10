@@ -1,0 +1,6 @@
+# Google Cloud Deployment file
+runtime: nodejs16
+
+handlers:
+  - url: /.*
+    script: auto
