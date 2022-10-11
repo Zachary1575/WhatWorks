@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Text, View } from 'react-native'
+import { Button, SafeAreaView, Text, View } from 'react-native'
 
 
 const HTTPSTestScreen = () => {
@@ -19,14 +19,26 @@ const HTTPSTestScreen = () => {
 
     }, []);
 
+    const HTTPFunction = () => {
+        return(<Text>{
+            data.description + "" + "\n" +
+            data.id + "" + "\n" +
+            data.name + "" + "\n"
+        }
+        </Text>)
+    }
+
     const HTTPData = () => {
         return(
-            <Text>{
-                data.description + "" + "\n" +
-                data.id + "" + "\n" +
-                data.name + "" + "\n"
-            }
-            </Text>
+            <SafeAreaView>
+                <Button onPress={HTTPFunction} title="Click me!"></Button>
+                <Text>{
+            data.description + "" + "\n" +
+            data.id + "" + "\n" +
+            data.name + "" + "\n"
+        }
+        </Text>
+            </SafeAreaView>
         )
     }
 
